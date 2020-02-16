@@ -1,26 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {PureComponent} from 'react';
+import {Header, Shop} from "./components/importComponents";
+import {BrowserRouter, Switch, Route} from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+const MainPage = (props) => {
+    return (
+        <div className={"MainPage"}>
+            {props.children}
+        </div>
+    )
+};
+
+
+class App extends PureComponent {
+
+
+    render() {
+
+        return (
+            <BrowserRouter>
+                <Switch>
+                    <Route
+                        exact
+                        path={"/"}
+                        render={
+                            (props) =>
+                                <MainPage>
+                                    <Header {...props}/>
+                                    <Shop {...props}/>
+                                </MainPage>}/>
+                </Switch>
+            </BrowserRouter>
+        );
+    }
 }
 
 export default App;

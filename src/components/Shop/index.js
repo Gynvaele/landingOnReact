@@ -1,29 +1,35 @@
-import React, {PureComponent} from "react";
-import {NavLink} from "react-router-dom";
-import "./style.scss"
+import React from "react";
+import "../style.scss"
 
-class Header extends PureComponent {
-    render() {
+const ShopHeader = () => {
+    return <div className="container">
+        <div className="col">Logo</div>
+        <div className="col">Korzina + Lang</div>
+    </div>
+};
 
-        return (
-            <header id="header">
-                <div className="container">
-                    <div className="col navi">
-                        <NavLink to={"/"} className={"navigationButton"}>О компании</NavLink>
-                        <NavLink to={"/objects"} className={"navigationButton"}>Объекты</NavLink>
-                        <NavLink to={"/3"} className={"navigationButton"}>Отзывы</NavLink>
-                        <NavLink to={"/4"} className={"navigationButton"}>Доставка</NavLink>
-                        <NavLink to={"/video"} className={"navigationButton"}>Видео</NavLink>
-                        <NavLink to={"/contacts"} className={"navigationButton"}>Контакты</NavLink>
-                    </div>
-                    <div className="col currentPage">
-                        <NavLink to={"/"} className="changeButtons">Магазин</NavLink>
-                        <NavLink to={"/anotherLayout"} className="changeButtons">Услуги</NavLink>
-                    </div>
-                </div>
-            </header>
-        )
-    }
-}
 
-export default Header;
+const Search = () => {
+    return <div className="search">
+        <div className="container">
+            <div className="search-logo">Search logo</div>
+            <div className="search-input">
+                <input type="text" placeholder={"search"}/>
+            </div>
+        </div>
+    </div>
+};
+
+
+export const Shop = () => {
+    return (
+        <section id="shop">
+            <ShopHeader/>
+            <Search/>
+            <div className="container">
+                <div className="col">col 1</div>
+                <div className="col">col 2</div>
+            </div>
+        </section>
+    )
+};
