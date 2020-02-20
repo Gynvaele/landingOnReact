@@ -1,15 +1,18 @@
 import React from "react";
 import {Route, NavLink} from "react-router-dom";
-import "../style.scss";
+import "./style.scss";
 import {category} from "../../assets/data"
+import main_logo from "../../assets/img/main_logo.png"
 
 const ShopHeader = () => {
     return (
         <div className="container">
-            <div className="logo-container">Logo</div>
+            <div className="logo-container">
+                <img src={main_logo} alt="main_logo" className={"main_logo"}/>
+            </div>
             <div className="wrapper">
                 <div>
-                    <img src="" alt="cart-logo"/>
+                    <img src="" alt="cart-logo" className={"cart-logo"}/>
                     <NavLink to={"/cart"}>Корзина</NavLink>
                 </div>
                 <div>
