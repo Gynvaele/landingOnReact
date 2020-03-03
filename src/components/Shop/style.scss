@@ -1,5 +1,8 @@
 #shop {
-  background-color: gray;
+  background-image: url("../../assets/img/background.png");
+  background-position: top;
+  background-repeat: no-repeat;
+  height: 200vh;
 
   .logo-container {
     display: block;
@@ -15,8 +18,77 @@
     }
   }
 
-  .cart-logo {
-    color: red;
+  .wrapper {
+    .cart {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      margin-right: 40px;
+    }
+
+    .cart-logo {
+      max-width: 1.8rem;
+      max-height: 1.5rem;
+
+    }
+
+    span {
+      margin-left: 10px;
+    }
+
+    .language {
+      padding: 3px;
+      margin: 0 2px;
+      border-radius: 5px;
+      border: solid 2px #ffd16c;
+      background-color: #ffd16c;
+
+      color: #000000;
+      text-decoration: none;
+      font-family: Roboto, sans-serif;
+      font-size: 0.8rem;
+      font-weight: 300;
+
+      &.active {
+        background-color: transparent;
+        border: solid 2px #9dcfff;
+      }
+
+      &:hover {
+        background-color: #9dcfff;
+        border: solid 2px #9dcfff;
+      }
+    }
   }
 
+  .search {
+    border: solid 2px #00a2ad;
+    padding: 2px 0 2px 50px;
+
+    .container {
+      .wrapper {
+        img {
+          width: 20px;
+          height: 20px;
+          object-fit: contain;
+          margin-right: 5px;
+        }
+
+        .search-input {
+          max-width: 100%;
+          text-decoration: none;
+          border: none;
+          background-color: transparent;
+          color: #00a2ad;
+          font-family: Roboto, sans-serif;
+          font-size: 16px;
+
+          ::-webkit-input-placeholder {
+            color: #00a2ad;
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
 }

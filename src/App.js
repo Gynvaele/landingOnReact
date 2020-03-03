@@ -20,15 +20,12 @@ class App extends PureComponent {
         return (
             <BrowserRouter>
                 <Switch>
-                    <Route
-                        exact
-                        path={"/"}
-                        render={
-                            (props) =>
-                                <MainPage>
-                                    <Header {...props}/>
-                                    <Shop {...props}/>
-                                </MainPage>}/>
+                    <Route exact path={"/"} render={(props) =>
+                        <MainPage>
+                            <Header {...props}/>
+                            <Shop {...props}/>
+                        </MainPage>
+                    }/>
                 </Switch>
             </BrowserRouter>
         );
